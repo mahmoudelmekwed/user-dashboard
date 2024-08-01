@@ -1,0 +1,29 @@
+.user-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 40px;
+}
+
+.user-card {
+    cursor: pointer;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.paginator-container {
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}

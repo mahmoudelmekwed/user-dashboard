@@ -1,1 +1,14 @@
-<p>user-list works!</p>
+<div class="user-list">
+    <mat-card *ngFor="let user of users" (click)="viewUser(user.id)" class="user-card">
+      <img mat-card-image [src]="user.avatar" alt="{{user.first_name}}" class="user-avatar">
+      <mat-card-title>{{ user.first_name }} {{ user.last_name }}</mat-card-title>
+    </mat-card>
+  </div>
+  <div class="paginator-container">
+    <mat-paginator 
+      [length]="totalUsers" 
+      [pageSize]="perPage" 
+      (page)="onPageChange($event)"
+    >
+    </mat-paginator>
+  </div>
