@@ -1,1 +1,9 @@
-<p>user-detail works!</p>
+<div class="user" *ngIf="user">
+    <img class="avater" [src]="user.avatar" alt="{{user.first_name}}">
+    <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+    <p class="email">
+        <span class="email-icon">✉️</span>
+        Email: {{ user.email }}
+    </p>    
+    <button mat-button class="button" (click)="goBack()">Back</button>
+</div>
