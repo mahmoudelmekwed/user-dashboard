@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { MatButtonModule } from '@angular/material/button';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-user-detail',
@@ -12,8 +13,9 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './user-detail.component.scss'
 })
 export class UserDetailComponent implements OnInit {
-
   user: any;
+  private searchSubscription!: Subscription;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -22,14 +24,34 @@ export class UserDetailComponent implements OnInit {
   ){}
 
   ngOnInit() {
+    this.fetchUserDetails();
+
+    this.searchSubscription = this.userService.searchQuery$.subscribe(query => {
+      if (query) {
+        this.userService.getUserById(Number(query)).subscribe(data => {
+          this.user = data.data;
+        });
+      } else {
+        this.fetchUserDetails();
+      }
+    });
+  }
+
+  fetchUserDetails() {
     const userId = this.route.snapshot.params['id'];
     this.userService.getUserById(userId).subscribe(data => {
       this.user = data.data;
     });
   }
 
-    goBack() {
+  goBack() {
     this.router.navigate(['/']);
+  }
+
+  ngOnDestroy() {
+    if (this.searchSubscription) {
+      this.searchSubscription.unsubscribe();
+    }
   }
 
 }

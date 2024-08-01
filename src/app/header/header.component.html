@@ -1,5 +1,10 @@
 <header class="header">
     <mat-form-field>
-      <input matInput placeholder="Search by ID" (input)="onSearch($event)">
+      <input 
+      matInput 
+      placeholder="Search by ID" 
+      (input)="onSearch()"
+      [(ngModel)]="searchQuery"
+      >
     </mat-form-field>
   </header>

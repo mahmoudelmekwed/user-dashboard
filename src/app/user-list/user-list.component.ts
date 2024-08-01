@@ -4,6 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-user-list',
@@ -16,11 +17,21 @@ export class UserListComponent implements OnInit{
   users: any[] = [];
   totalUsers!:number;
   perPage!: number;
+  private searchSubscription!: Subscription;
+
 
   constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit() {
     this.fetchUsers(1);
+
+    this.searchSubscription = this.userService.searchQuery$.subscribe(query => {
+      if (query) {
+        this.searchUserById(query);
+      } else {
+        this.fetchUsers(1);
+      }
+    });
   }
 
   fetchUsers(page: number) {
@@ -35,8 +46,21 @@ export class UserListComponent implements OnInit{
     this.fetchUsers(event.pageIndex + 1);
   }
 
-  viewUser(id: number) {
+  onCardClick(id: number) {
     this.router.navigate([`/user/${id}`]);
+  }
+
+  searchUserById(id: string) {
+    this.userService.getUserById(Number(id)).subscribe(data => {
+      this.users = [data.data];
+      this.totalUsers = 1;
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.searchSubscription) {
+      this.searchSubscription.unsubscribe();
+    }
   }
 
 }
