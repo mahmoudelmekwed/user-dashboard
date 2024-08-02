@@ -6,6 +6,7 @@ import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HighlightDirective } from '../directives/highlight.directive';
+import { BubblePaginationDirective } from '../directives/bubble-pagination.directive';
 
 @Component({
   selector: 'app-user-list',
@@ -15,7 +16,9 @@ import { HighlightDirective } from '../directives/highlight.directive';
     MatCardModule, 
     MatPaginatorModule, 
     MatProgressSpinnerModule, 
-    HighlightDirective],
+    HighlightDirective,
+    BubblePaginationDirective,
+  ],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.scss'
 })

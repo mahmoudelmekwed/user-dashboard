@@ -1,5 +1,11 @@
 .user-list {
     display: flex;
+    flex-direction: column;
+    min-height: 60vh;
+}
+
+.card{
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
@@ -32,6 +38,8 @@
     justify-content: center;
     width: 100%;
 }
+
+
 
 .spinner {
     display: flex;

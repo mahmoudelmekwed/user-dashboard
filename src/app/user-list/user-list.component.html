@@ -2,13 +2,16 @@
   <mat-spinner></mat-spinner>
 </div>
 <div class="user-list" *ngIf="!loading">
+  <div class="card">
     <mat-card *ngFor="let user of users" (click)="onCardClick(user.id)" appHighlight class="user-card">
       <img mat-card-image [src]="user.avatar" alt="{{user.first_name}}" class="user-avatar">
       <mat-card-title>{{ user.first_name }} {{ user.last_name }}</mat-card-title>
     </mat-card>
   </div>
+  </div>
   <div class="paginator-container">
     <mat-paginator 
+      appBubblePagination
       [length]="totalUsers" 
       [pageSize]="perPage" 
       (page)="onPageChange($event)"
