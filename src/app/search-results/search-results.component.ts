@@ -8,6 +8,7 @@ import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { HighlightDirective } from '../directives/highlight.directive';
+import { User } from '../interfaces/user.models';
 
 
 @Component({
@@ -31,7 +32,7 @@ import { HighlightDirective } from '../directives/highlight.directive';
   ]
 })
 export class SearchResultsComponent implements OnInit, OnDestroy {
-  searchResults: any[] = [];
+  searchResults:User[]= [];
   private searchSubscription!: Subscription;
   loading = false;
 

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { UserService } from '../services/user.service';
@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HighlightDirective } from '../directives/highlight.directive';
 import { BubblePaginationDirective } from '../directives/bubble-pagination.directive';
+import { User } from '../interfaces/user.models';
 
 @Component({
   selector: 'app-user-list',
@@ -23,7 +24,7 @@ import { BubblePaginationDirective } from '../directives/bubble-pagination.direc
   styleUrl: './user-list.component.scss'
 })
 export class UserListComponent implements OnInit{
-  users: any[] = [];
+  users: User[] = [];
   totalUsers!:number;
   perPage!: number;
   loading = false;

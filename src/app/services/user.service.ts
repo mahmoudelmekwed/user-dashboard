@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, delay, Observable, of, shareReplay, tap } from 'rxjs';
+import { catchError, Observable, of, shareReplay, tap } from 'rxjs';
+import { ApiResponse, User, UserDetails } from '../interfaces/user.models';
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +16,9 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
 
-  getUsers(page: number): Observable<any> {
+  getUsers(page: number): Observable<ApiResponse> {
     if (!this.usersCache.has(page)) {
-      const request$ = this.http.get<any>(`${this.API_URL}?page=${page}`).pipe(
+      const request$ = this.http.get<ApiResponse>(`${this.API_URL}?page=${page}`).pipe(
         shareReplay(1), 
         catchError(error => {
           console.error('Error fetching users:', error);
@@ -29,9 +30,9 @@ export class UserService {
     return this.usersCache.get(page) || of({ data: [], total: 0 });
   }
 
-  getUserById(id: number): Observable<any> {
+  getUserById(id: number): Observable<UserDetails> {
     if (!this.userCache.has(id)) {
-      const request$ = this.http.get<any>(`${this.API_URL}/${id}`).pipe(
+      const request$ = this.http.get<UserDetails>(`${this.API_URL}/${id}`).pipe(
         shareReplay(1),
         catchError(error => {
           console.error('Error fetching user:', error);
@@ -42,4 +43,6 @@ export class UserService {
     }
     return this.userCache.get(id) || of({ data: null });
   }
+
+
 }

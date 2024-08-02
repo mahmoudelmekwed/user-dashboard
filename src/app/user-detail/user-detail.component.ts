@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { MatButtonModule } from '@angular/material/button';
-import { Subscription } from 'rxjs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { User } from '../interfaces/user.models';
 
 
 @Component({
@@ -15,7 +15,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   styleUrl: './user-detail.component.scss'
 })
 export class UserDetailComponent implements OnInit {
-  user: any;
+  user!: User;
   loading = false;
 
   constructor(
