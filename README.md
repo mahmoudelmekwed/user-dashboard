@@ -27,10 +27,10 @@ This project demonstrates proficiency in Angular (7+) by creating an interactive
     http://localhost:4200
 
 ## Usage Instructions
-Search by ID: Use the search bar in the header to find users by ID. The search results will be displayed on a separate screen.
-User List: The main screen displays a paginated list of users. Click on any user card to view detailed information about the user.
-Navigation: Use the home button in the header to return to the main user list from any screen.
-User Details: Each user details page includes a back button to return to the main user list.
+**Search by ID: Use the search bar in the header to find users by ID. The search results will be displayed on a separate screen.**
+**User List: The main screen displays a paginated list of users. Click on any user card to view detailed information about the user.**
+**Navigation: Use the home button in the header to return to the main user list from any screen.**
+**User Details: Each user details page includes a back button to return to the main user list.**
 
 ## Project Structure
     src/
@@ -69,12 +69,12 @@ User Details: Each user details page includes a back button to return to the mai
 
 
 ## Highlighted Features
-Custom Directive: A highlight directive that changes the background color of elements it is applied to. The color used is #cbaee9.
-Loading Spinner: Displays a loading spinner while data is being fetched to improve user experience.
-Caching: Implemented caching mechanisms to avoid redundant HTTP requests, optimizing application performance.
+**Custom Directive: A highlight directive that changes the background color of elements it is applied to. The color used is #cbaee9.**
+**Loading Spinner: Displays a loading spinner while data is being fetched to improve user experience.**
+**Caching: Implemented caching mechanisms to avoid redundant HTTP requests, optimizing application performance.**
 ## Contact Information
 For questions or contributions, please contact:
 
-Name: Mahmoud Abdelmonem
-Email: mahmoud.elmekwed@gmail.com
-Phone: +20 102 548 5165
+**Name: Mahmoud Abdelmonem**
+**Email: mahmoud.elmekwed@gmail.com**
+**Phone: +20 102 548 5165**
