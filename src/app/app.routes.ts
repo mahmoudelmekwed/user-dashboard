@@ -3,6 +3,9 @@ import { UserListComponent } from './components/user-list/user-list.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 
+/**
+ * Defines the application routes.
+ */
 export const routes: Routes = [
     { path: '', component: UserListComponent },
     { path: 'user-list', component: UserListComponent },

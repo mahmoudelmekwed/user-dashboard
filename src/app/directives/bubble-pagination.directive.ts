@@ -17,6 +17,12 @@ export class BubblePaginationDirective implements AfterViewInit {
     this.styleDefaultPagination();
   }
 
+    /**
+   * Applies custom styles to the paginator elements.
+   * - Hides the 'items per page' label.
+   * - Styles the display of the range label (how many elements are currently displayed).
+   */
+
   private styleDefaultPagination() {
     const nativeElement = this.elementRef.nativeElement;
 
