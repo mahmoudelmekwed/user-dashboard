@@ -1,4 +1,7 @@
-<div class="user" *ngIf="user">
+<div *ngIf="loading" class="spinner">
+    <mat-spinner></mat-spinner>
+  </div>
+<div class="user" *ngIf="!loading && user">
     <img class="avater" [src]="user.avatar" alt="{{user.first_name}}">
     <h2>{{ user.first_name }} {{ user.last_name }}</h2>
     <p class="email">
