@@ -4,13 +4,18 @@ import { MatCardModule } from '@angular/material/card';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { HighlightDirective } from '../directives/highlight.directive';
 
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatPaginatorModule, MatProgressSpinnerModule],
+  imports: [
+    CommonModule, 
+    MatCardModule, 
+    MatPaginatorModule, 
+    MatProgressSpinnerModule, 
+    HighlightDirective],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.scss'
 })

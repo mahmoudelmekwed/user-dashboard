@@ -2,7 +2,7 @@
     <mat-spinner></mat-spinner>
 </div>
 <div class="user-list" *ngIf="!loading && searchResults.length">
-  <mat-card *ngFor="let user of searchResults" (click)="onCardClick(user.id)" class="user-card">
+  <mat-card *ngFor="let user of searchResults" (click)="onCardClick(user.id)" appHighlight class="user-card"  [@cardAnimation]>
     <img mat-card-image [src]="user.avatar" alt="{{user.first_name}}" class="user-avatar">
     <mat-card-title>{{ user.first_name }} {{ user.last_name }}</mat-card-title>
   </mat-card>

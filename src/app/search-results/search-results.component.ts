@@ -6,14 +6,29 @@ import { Subscription } from 'rxjs';
 import { SearchService } from '../services/search.service';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { HighlightDirective } from '../directives/highlight.directive';
 
 
 @Component({
   selector: 'app-search-results',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatProgressSpinnerModule],
+  imports: [
+    CommonModule, 
+    MatCardModule, 
+    MatProgressSpinnerModule,
+    HighlightDirective,
+  ],
   templateUrl: './search-results.component.html',
-  styleUrl: './search-results.component.scss'
+  styleUrl: './search-results.component.scss',
+  animations: [
+    trigger('cardAnimation', [
+      state('void', style({ opacity: 0, transform: 'translateY(-20px)' })),
+      transition(':enter, :leave', [
+        animate('0.5s ease-in-out')
+      ])
+    ])
+  ]
 })
 export class SearchResultsComponent implements OnInit, OnDestroy {
   searchResults: any[] = [];
