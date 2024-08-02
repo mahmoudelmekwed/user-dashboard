@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, of, shareReplay, tap } from 'rxjs';
-import { ApiResponse, User, UserDetails } from '../interfaces/user.models';
+import { ApiResponse, User, UserDetails } from '../models/user.models';
 
 @Injectable({
   providedIn: 'root'

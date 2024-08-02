@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { SearchService } from '../services/search.service';
+import { SearchService } from '../../services/search.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 

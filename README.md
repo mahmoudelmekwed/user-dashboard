@@ -1,27 +1,81 @@
-# UserDashboard
+# Angular User Dashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.3.
+## Description
+This project demonstrates proficiency in Angular (7+) by creating an interactive user dashboard that employs advanced features such as directives and observables. The application retrieves user data from a REST API and allows searching, pagination, and detailed user views. It includes a custom highlight directive, a loading spinner, and efficient caching mechanisms to enhance the user experience.
 
-## Development server
+## Setup Instructions
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/mahmoudelmekwed/user-dashboard.git
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. **Navigate to the project directory:**
+    ```bash
+    cd user-dashboard
 
-## Build
+3. **Install dependencies:**
+    ```bash
+    npm install
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+4. **Run the application:**
+    ```bash
+    ng serve
 
-## Running unit tests
+5. **Open your browser and navigate to:**
+    ```bash
+    http://localhost:4200
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Usage Instructions
+Search by ID: Use the search bar in the header to find users by ID. The search results will be displayed on a separate screen.
+User List: The main screen displays a paginated list of users. Click on any user card to view detailed information about the user.
+Navigation: Use the home button in the header to return to the main user list from any screen.
+User Details: Each user details page includes a back button to return to the main user list.
 
-## Running end-to-end tests
+## Project Structure
+    ```bash
+    src/
+    ├── app/
+    │   ├── components/
+    │   │   ├── header/
+    │   │   │   ├── header.component.ts
+    │   │   │   ├── header.component.html
+    │   │   │   └── header.component.scss
+    │   │   ├── user-list/
+    │   │   │   ├── user-list.component.ts
+    │   │   │   ├── user-list.component.html
+    │   │   │   └── user-list.component.scss
+    │   │   ├── user-detail/
+    │   │   │   ├── user-detail.component.ts
+    │   │   │   ├── user-detail.component.html
+    │   │   │   └── user-detail.component.scss
+    │   │   ├── search-results/
+    │   │   │   ├── search-results.component.ts
+    │   │   │   ├── search-results.component.html
+    │   │   │   └── search-results.component.scss
+    │   ├── services/
+    │   │   ├── user.service.ts
+    │   │   └── search.service.ts
+    │   ├── models/
+    │   │   └── user.model.ts
+    │   ├── directives/
+    │   │   ├── highlight.directive.ts
+    │   │   └── bubble-pagination.directive.ts
+    │   ├── app.component.ts
+    │   ├── app.component.html
+    │   ├── app.component.scss
+    │   ├── app.config.server.ts
+    │   ├── app.config.ts
+    │   └── app.routes.ts
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Highlighted Features
+Custom Directive: A highlight directive that changes the background color of elements it is applied to. The color used is #cbaee9.
+Loading Spinner: Displays a loading spinner while data is being fetched to improve user experience.
+Caching: Implemented caching mechanisms to avoid redundant HTTP requests, optimizing application performance.
+## Contact Information
+For questions or contributions, please contact:
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Name: Mahmoud Abdelmonem
+Email: mahmoud.elmekwed@gmail.com
+Phone: +20 102 548 5165

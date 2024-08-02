@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { UserDetailComponent } from './user-detail/user-detail.component';
-import { UserListComponent } from './user-list/user-list.component';
-import { SearchResultsComponent } from './search-results/search-results.component';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
 
 export const routes: Routes = [
     { path: '', component: UserListComponent },

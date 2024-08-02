@@ -3,12 +3,13 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
 import { Subscription } from 'rxjs';
-import { SearchService } from '../services/search.service';
-import { UserService } from '../services/user.service';
+
 import { Router } from '@angular/router';
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { HighlightDirective } from '../directives/highlight.directive';
-import { User } from '../interfaces/user.models';
+import { HighlightDirective } from '../../directives/highlight.directive';
+import { User } from '../../models/user.models';
+import { UserService } from '../../services/user.service';
+import { SearchService } from '../../services/search.service';
 
 
 @Component({
