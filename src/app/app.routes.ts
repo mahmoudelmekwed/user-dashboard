@@ -5,6 +5,7 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 
 export const routes: Routes = [
     { path: '', component: UserListComponent },
+    { path: 'user-list', component: UserListComponent },
     { path: 'user/:id', component: UserDetailComponent },
     { path: 'search', component: SearchResultsComponent }
 ];

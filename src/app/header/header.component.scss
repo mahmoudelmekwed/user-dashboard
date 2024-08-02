@@ -12,6 +12,7 @@
     border-bottom-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+    padding: 1rem;
 }
 
 mat-form-field {
@@ -20,5 +21,21 @@ mat-form-field {
 }
 
 :host ::ng-deep .mat-mdc-text-field-wrapper{
+    border-radius: 15px;
+}
+
+.home-button {
+    margin-right: 60px;
+    margin-bottom: 20px;
+    background-color: #cbaee9;
+    color: #fff;
+    border: none;
     border-radius: 5px;
+    padding: 20px 35px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #b48bc7;
+    }
 }
