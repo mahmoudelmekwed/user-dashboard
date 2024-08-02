@@ -14,11 +14,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.scss'
 })
-export class UserListComponent implements OnInit, OnDestroy{
+export class UserListComponent implements OnInit{
   users: any[] = [];
   totalUsers!:number;
   perPage!: number;
-  private searchSubscription!: Subscription;
   loading = false;
 
 
@@ -26,14 +25,6 @@ export class UserListComponent implements OnInit, OnDestroy{
 
   ngOnInit() {
     this.fetchUsers(1);
-
-    this.searchSubscription = this.userService.searchQuery$.subscribe(query => {
-      if (query) {
-        this.searchUserById(query);
-      } else {
-        this.fetchUsers(1);
-      }
-    });
   }
 
   fetchUsers(page: number) {
@@ -52,21 +43,6 @@ export class UserListComponent implements OnInit, OnDestroy{
 
   onCardClick(id: number) {
     this.router.navigate([`/user/${id}`]);
-  }
-
-  searchUserById(id: string) {
-    this.loading = true;
-    this.userService.getUserById(Number(id)).subscribe(data => {
-      this.users = [data.data];
-      this.totalUsers = 1;
-      this.loading = false;
-    });
-  }
-
-  ngOnDestroy() {
-    if (this.searchSubscription) {
-      this.searchSubscription.unsubscribe();
-    }
   }
 
 }

@@ -11,9 +11,6 @@ export class UserService {
   private usersCache = new Map<number, Observable<any>>();
   private userCache = new Map<number, Observable<any>>();
 
-  private searchQuerySubject = new BehaviorSubject<string>('');
-  searchQuery$ = this.searchQuerySubject.asObservable();
-
 
   constructor(private http: HttpClient) { }
 
@@ -44,9 +41,5 @@ export class UserService {
       this.userCache.set(id, request$);
     }
     return this.userCache.get(id) || of({ data: null });
-  }
-
-  setSearchQuery(query: string) {
-    this.searchQuerySubject.next(query);
   }
 }

@@ -16,7 +16,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 })
 export class UserDetailComponent implements OnInit {
   user: any;
-  private searchSubscription!: Subscription;
   loading = false;
 
   constructor(
@@ -27,18 +26,6 @@ export class UserDetailComponent implements OnInit {
 
   ngOnInit() {
     this.fetchUserDetails();
-
-    this.searchSubscription = this.userService.searchQuery$.subscribe(query => {
-      if (query) {
-        this.loading = true;
-        this.userService.getUserById(Number(query)).subscribe(data => {
-          this.user = data.data;
-          this.loading = false;
-        });
-      } else {
-        this.fetchUserDetails();
-      }
-    });
   }
 
   fetchUserDetails() {
@@ -52,12 +39,6 @@ export class UserDetailComponent implements OnInit {
 
   goBack() {
     this.router.navigate(['/']);
-  }
-
-  ngOnDestroy() {
-    if (this.searchSubscription) {
-      this.searchSubscription.unsubscribe();
-    }
   }
 
 }
