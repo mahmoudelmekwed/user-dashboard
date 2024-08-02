@@ -33,7 +33,6 @@ Navigation: Use the home button in the header to return to the main user list fr
 User Details: Each user details page includes a back button to return to the main user list.
 
 ## Project Structure
-    ```bash
     src/
     ├── app/
     │   ├── components/
@@ -67,7 +66,7 @@ User Details: Each user details page includes a back button to return to the mai
     │   ├── app.config.server.ts
     │   ├── app.config.ts
     │   └── app.routes.ts
-    ```
+
 
 ## Highlighted Features
 Custom Directive: A highlight directive that changes the background color of elements it is applied to. The color used is #cbaee9.
